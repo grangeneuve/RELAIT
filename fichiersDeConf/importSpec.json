@@ -1,0 +1,1883 @@
+{
+    "Y01": [
+        {
+            "specParam": "TypeData",
+            "type": "Texte court",
+            "start": 1,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "VersionData",
+            "type": "Entier long",
+            "start": 4,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "ID_Expl",
+            "type": "Entier long",
+            "start": 6,
+            "length": 10,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "LST_EXPL_IMPORTEES",
+                    "calculChamp1": "Données exploitations*Propriétaire",
+                    "calculChamp2": "ID_Expl",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                },
+                {
+                    "calculOperation": "VERIFICATION_EXPL_EXISTANTE",
+                    "calculChamp1": "Données exploitations*Propriétaire",
+                    "calculChamp2": "ID_Expl",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "BDTA_Expl",
+            "type": "Entier long",
+            "start": 16,
+            "length": 7,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° national",
+            "type": "Texte court",
+            "start": 23,
+            "length": 14,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "race",
+            "type": "Texte court",
+            "start": 37,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nom",
+            "type": "Texte court",
+            "start": 40,
+            "length": 12,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Naissance",
+            "type": "Entier long",
+            "start": 52,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "ID_Pere",
+            "type": "Texte court",
+            "start": 60,
+            "length": 14,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Race_Pere",
+            "type": "Texte court",
+            "start": 74,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "ID_Mere",
+            "type": "Texte court",
+            "start": 77,
+            "length": 14,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Race_Mere",
+            "type": "Texte court",
+            "start": 91,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Race_Principale",
+            "type": "Texte court",
+            "start": 94,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Pourcent_Race_Principale",
+            "type": "Entier long",
+            "start": 97,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "2eme_Race",
+            "type": "Texte court",
+            "start": 100,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Pourcent_2eme_Race",
+            "type": "Entier long",
+            "start": 103,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "3eme_Race",
+            "type": "Texte court",
+            "start": 106,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Pourcent_3eme_Race",
+            "type": "Entier long",
+            "start": 109,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Sexe",
+            "type": "Entier long",
+            "start": 112,
+            "length": 1,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "ID_Expl_Eleveur",
+            "type": "Entier long",
+            "start": 113,
+            "length": 10,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "BDTA_Eleveur",
+            "type": "Entier long",
+            "start": 123,
+            "length": 7,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Entree",
+            "type": "Entier long",
+            "start": 130,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Depart",
+            "type": "Entier long",
+            "start": 138,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Motif_Depart",
+            "type": "Entier long",
+            "start": 146,
+            "length": 1,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nom_Animal_long",
+            "type": "Texte court",
+            "start": 147,
+            "length": 56,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Zone_Montagne_du",
+            "type": "Entier long",
+            "start": 203,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Zone_Montagne_au",
+            "type": "Entier long",
+            "start": 211,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Zone_Montagne_Lieu",
+            "type": "Entier long",
+            "start": 219,
+            "length": 10,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Contingent_Supl",
+            "type": "Entier long",
+            "start": 229,
+            "length": 4,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Contingent_Supl_Canton",
+            "type": "Texte court",
+            "start": 233,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Couleur",
+            "type": "Entier long",
+            "start": 235,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "ID_Etranger",
+            "type": "Texte court",
+            "start": 237,
+            "length": 20,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Syndicat",
+            "type": "Texte court",
+            "start": 257,
+            "length": 20,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Triple_A",
+            "type": "Texte court",
+            "start": 277,
+            "length": 6,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "No_collier",
+            "type": "Texte court",
+            "start": 283,
+            "length": 4,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Origine_Data",
+            "type": "Entier long",
+            "start": 287,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Y01"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        }
+    ],
+    "K03": [
+        {
+            "specParam": "Propriétaire",
+            "type": "Entier long",
+            "start": 6,
+            "length": 10,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "LST_EXPL_IMPORTEES",
+                    "calculChamp1": "Données exploitations*Propriétaire",
+                    "calculChamp2": "Propriétaire",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                },
+                {
+                    "calculOperation": "REMPLACER",
+                    "calculChamp1": "Données exploitations",
+                    "calculChamp2": "Propriétaire",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° national",
+            "type": "Texte court",
+            "start": 23,
+            "length": 14,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nom",
+            "type": "Texte court",
+            "start": 40,
+            "length": 12,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° Travail",
+            "type": "Entier long",
+            "start": 168,
+            "length": 4,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "NUM_TRAVAIL",
+                    "calculChamp1": "Données lait",
+                    "calculChamp2": "N° Travail"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Age",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Age (j)",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "SOUSTRACTION",
+                    "calculChamp1": "Date CL",
+                    "calculChamp2": "Y01!Naissance"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "DVêl",
+            "type": "Date/Heure",
+            "start": 69,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date CL",
+            "type": "Date/Heure",
+            "start": 82,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Num ctrl",
+            "type": "Entier long",
+            "start": 79,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Etat",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Lait",
+            "type": "Réel double",
+            "start": 90,
+            "length": 4,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": 2,
+            "max": "infini"
+        },
+        {
+            "specParam": "Lait -1",
+            "type": "Réel double",
+            "start": 106,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "MULTIPLICATION",
+                    "calculChamp1": "Lait -1",
+                    "calculChamp2": 0.01
+                },
+                {
+                    "calculOperation": "DIVISION",
+                    "calculChamp1": "Lait",
+                    "calculChamp2": "Lait -1"
+                },
+                {
+                    "calculOperation": "ARRONDI",
+                    "calculChamp1": "Lait -1",
+                    "calculChamp2": 1
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Persistance",
+            "type": "Réel double",
+            "start": 106,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "VERIFICATION_DOUBLE_CALC",
+                    "calculChamp1": "Num ctrl",
+                    "calculChamp2": [
+                        {
+                            "de": 0,
+                            "a": 1,
+                            "operation": "*",
+                            "champ1": "Persistance",
+                            "champ2": 0.01
+                        },
+                        {
+                            "de": 2,
+                            "a": "infini",
+                            "operation": "/",
+                            "champ1": "Lait",
+                            "champ2": "Lait -1"
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "TB",
+            "type": "Réel double",
+            "start": 94,
+            "length": 4,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "MULTIPLICATION",
+                    "calculChamp1": "TB",
+                    "calculChamp2": 10
+                }
+            ],
+            "min": 2.5,
+            "max": "infini"
+        },
+        {
+            "specParam": "TP",
+            "type": "Réel double",
+            "start": 98,
+            "length": 4,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "MULTIPLICATION",
+                    "calculChamp1": "TP",
+                    "calculChamp2": 10
+                }
+            ],
+            "min": 1.5,
+            "max": "infini"
+        },
+        {
+            "specParam": "Urée",
+            "type": "Entier long",
+            "start": 113,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": 2,
+            "max": 70
+        },
+        {
+            "specParam": "Cell",
+            "type": "Entier long",
+            "start": 109,
+            "length": 4,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Numlact",
+            "type": "Entier long",
+            "start": 77,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nbjours lact",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "SOUSTRACTION",
+                    "calculChamp1": "Date CL",
+                    "calculChamp2": "DVêl"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Potentiel",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Prim_Multi",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "COMPARAISON",
+                    "calculChamp1": "Numlact",
+                    "calculChamp2": [
+                        {
+                            "de": "0",
+                            "a": "1",
+                            "valeur": "Prim."
+                        },
+                        {
+                            "de": "2",
+                            "a": "inifini",
+                            "valeur": "Mult."
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Cat_Cellules",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "COMPARAISON",
+                    "calculChamp1": "Cell",
+                    "calculChamp2": [
+                        {
+                            "de": "0",
+                            "a": "0",
+                            "valeur": "NULL"
+                        },
+                        {
+                            "de": "1",
+                            "a": "149",
+                            "valeur": "<150"
+                        },
+                        {
+                            "de": "150",
+                            "a": "650",
+                            "valeur": "150-650"
+                        },
+                        {
+                            "de": "651",
+                            "a": "infini",
+                            "valeur": ">650"
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "TB_TP",
+            "type": "Réel double",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "DIVISION",
+                    "calculChamp1": "TB",
+                    "calculChamp2": "TP"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Cat_j_lact",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "COMPARAISON",
+                    "calculChamp1": "Nbjours lact",
+                    "calculChamp2": [
+                        {
+                            "de": "0",
+                            "a": "59",
+                            "valeur": "<60"
+                        },
+                        {
+                            "de": "60",
+                            "a": "200",
+                            "valeur": "60-200"
+                        },
+                        {
+                            "de": "201",
+                            "a": "infini",
+                            "valeur": ">200"
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Cat_metab",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "COMPARAISON",
+                    "calculChamp1": "TB_TP",
+                    "calculChamp2": [
+                        {
+                            "de": "0",
+                            "a": "0.99",
+                            "valeur": "acidose"
+                        },
+                        {
+                            "de": "1",
+                            "a": "1.5",
+                            "valeur": "neutre"
+                        },
+                        {
+                            "de": "1.51",
+                            "a": "infini",
+                            "valeur": "acétonémie"
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Observations",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Conseils",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Quartiers",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Posologie",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Acetone",
+            "type": "Entier long",
+            "start": 127,
+            "length": 3,
+            "default": "NULL",
+            "tableDest": [
+                "Données lait"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        }
+    ],
+    "K10": [
+        {
+            "specParam": "Propriétaire",
+            "type": "Entier long",
+            "start": 6,
+            "length": 10,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro",
+                "Reproduction - IA"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "LST_EXPL_IMPORTEES",
+                    "calculChamp1": "Données exploitations*Propriétaire",
+                    "calculChamp2": "Propriétaire",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                },
+                {
+                    "calculOperation": "REMPLACER",
+                    "calculChamp1": "Données exploitations",
+                    "calculChamp2": "Propriétaire",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° national",
+            "type": "Texte court",
+            "start": 23,
+            "length": 14,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro",
+                "Reproduction - IA"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nom",
+            "type": "Texte court",
+            "start": 40,
+            "length": 12,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro",
+                "Reproduction - IA"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° Travail",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro",
+                "Reproduction - IA"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "NUM_TRAVAIL_K10",
+                    "calculChamp1": "Données lait",
+                    "calculChamp2": "N° Travail"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Etat",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date vêl",
+            "type": "Date/Heure",
+            "start": 72,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date dern IA/SN",
+            "type": "Date/Heure",
+            "start": 80,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nb j/vêl",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "SOUSTRACTION",
+                    "calculChamp1": "Date dern IA/SN",
+                    "calculChamp2": "Date vêl"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "RGV",
+            "type": "Entier long",
+            "start": 69,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro",
+                "Reproduction - IA"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "TRAITEMENT_DOUBLONS",
+                    "calculChamp1": true,
+                    "calculChamp2": "RGV"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date Taris",
+            "type": "Date/Heure",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "IVV",
+            "type": "Entier long",
+            "start": -2,
+            "length": -2,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° IA/SN",
+            "type": "Entier long",
+            "start": 89,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date 1ère IA/SN",
+            "type": "Date/Heure",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "VERIFICATION",
+                    "calculChamp1": "N° IA/SN",
+                    "calculChamp2": [
+                        {
+                            "de": "0",
+                            "a": "0",
+                            "valeur": ""
+                        },
+                        {
+                            "de": "1",
+                            "a": "1",
+                            "valeur": "Date dern IA/SN"
+                        },
+                        {
+                            "de": "2",
+                            "a": "infini",
+                            "valeur": ""
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "IV-1ère IA/SN",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "VERIFICATION",
+                    "calculChamp1": "N° IA/SN",
+                    "calculChamp2": [
+                        {
+                            "de": "0",
+                            "a": "0",
+                            "valeur": ""
+                        },
+                        {
+                            "de": "1",
+                            "a": "1",
+                            "valeur": "Nb j/vêl"
+                        },
+                        {
+                            "de": "2",
+                            "a": "infini",
+                            "valeur": ""
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Age 1 IA/SN (j)",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "SOUSTRACTION",
+                    "calculChamp1": "Y01!Naissance",
+                    "calculChamp2": "Date vêl"
+                },
+                {
+                    "calculOperation": "VERIFICATION",
+                    "calculChamp1": "Date 1ère IA/SN",
+                    "calculChamp2": [
+                        {
+                            "de": "0",
+                            "a": "0",
+                            "valeur": ""
+                        },
+                        {
+                            "de": "1",
+                            "a": "infini",
+                            "valeur": "Age 1 IA/SN (j)"
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "IV-IA/SN fécond",
+            "type": "Entier long",
+            "start": -2,
+            "length": -2,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date DG",
+            "type": "Texte court",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Rés DG",
+            "type": "Texte court",
+            "start": -2,
+            "length": -2,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nbj gest",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date MRE prév",
+            "type": "Date/Heure",
+            "start": -2,
+            "length": -2,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date tar prévu",
+            "type": "Date/Heure",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "SOMME",
+                    "calculChamp1": "Date dern IA/SN",
+                    "calculChamp2": 220
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date vêl prévu",
+            "type": "Date/Heure",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "SOMME",
+                    "calculChamp1": "Date dern IA/SN",
+                    "calculChamp2": 280
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nom taureau",
+            "type": "Texte court",
+            "start": 108,
+            "length": 12,
+            "default": "NULL",
+            "tableDest": [
+                "Etat repro",
+                "Reproduction - IA"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date",
+            "type": "Date/Heure",
+            "start": 80,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Reproduction - IA"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° ins",
+            "type": "Entier long",
+            "start": 89,
+            "length": 2,
+            "default": "NULL",
+            "tableDest": [
+                "Reproduction - IA"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "DVêl",
+            "type": "Date/Heure",
+            "start": 72,
+            "length": 8,
+            "default": "NULL",
+            "tableDest": [
+                "Reproduction - IA"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "IV-IA",
+            "type": "Entier long",
+            "start": 0,
+            "length": 0,
+            "default": "NULL",
+            "tableDest": [
+                "Reproduction - IA"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "SOUSTRACTION",
+                    "calculChamp1": "Date",
+                    "calculChamp2": "DVêl"
+                }
+            ],
+            "min": -1,
+            "max": -1
+        }
+    ],
+    "Données Santé": [
+        {
+            "specParam": "N° exploitation",
+            "type": "Entier long",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "VERIFICATION_EXPL_EXISTANTE",
+                    "calculChamp1": "Données exploitations*Propriétaire",
+                    "calculChamp2": "N° exploitation",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° national",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° diagnostic",
+            "type": "Entier long",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Niveau 1 diagnostic",
+            "type": "Entier long",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Niveau 2 diagnostic",
+            "type": "Entier long",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Niveau 3 diagnostic",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Niveau 3a diagnostic",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Niveau 4 diagnostic",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date diagnostic",
+            "type": "Date/Heure",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "CTRL_VIDE",
+                    "calculChamp1": "Date diagnostic",
+                    "calculChamp2": [
+                        {
+                            "terme": "NULL",
+                            "valeur": "Date début traitement"
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date début traitement",
+            "type": "Date/Heure",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date fin traitement",
+            "type": "Date/Heure",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Date livraison du lait",
+            "type": "Date/Heure",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Nom médicament",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "CTRL_VIDE",
+                    "calculChamp1": "Nom médicament",
+                    "calculChamp2": [
+                        {
+                            "terme": "NULL",
+                            "valeur": "#Diagnostic sans médicament / Diagnose ohne Medikament"
+                        }
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Quantité et Unité",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Remarques diagnostics",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Remarques traitements",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": false,
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "N° diagnostic - exploitation",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "CONCATENER",
+                    "calculChamp1": "N° exploitation",
+                    "calculChamp2": "N° diagnostic",
+                    "criteres": [
+                        "-"
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Niveau 1 - 2 diagnostic",
+            "type": "Texte court",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "CONCATENER",
+                    "calculChamp1": "Niveau 1 diagnostic",
+                    "calculChamp2": "Niveau 2 diagnostic",
+                    "criteres": [
+                        "."
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Naissance",
+            "type": "Entier long",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "REMPLACER",
+                    "calculChamp1": "Y01*N° national",
+                    "calculChamp2": "Naissance",
+                    "criteres": [
+                        "N° national"
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        },
+        {
+            "specParam": "Propriétaire",
+            "type": "Entier long",
+            "default": "NULL",
+            "tableDest": [
+                "Données Santé"
+            ],
+            "estCalcule": true,
+            "paramsCalcul": [
+                {
+                    "calculOperation": "CTRL_VIDE",
+                    "calculChamp1": "Propriétaire",
+                    "calculChamp2": [
+                        {
+                            "terme": "NULL",
+                            "valeur": "N° exploitation"
+                        }
+                    ]
+                },
+                {
+                    "calculOperation": "REMPLACER",
+                    "calculChamp1": "Données exploitations",
+                    "calculChamp2": "Propriétaire",
+                    "criteres": [
+                        "N° exploitation Holstein",
+                        "N° exploitation SwissHerdBook",
+                        "N° exploitation Brune"
+                    ]
+                }
+            ],
+            "min": -1,
+            "max": -1
+        }
+    ]
+}

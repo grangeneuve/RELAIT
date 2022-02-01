@@ -1,0 +1,95 @@
+body {
+    padding-left: 1%;
+    padding-bottom: 1%;
+    background-color: rgba(0,153,178,0.3);
+    background-image: linear-gradient(to top left, rgba(179,179,179,1), rgba(0,111,128,1));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, p {
+    color: white;
+}
+
+textarea {
+    /* pour enlever le surlignage du tour de l'area 
+    outline: none;
+    /* pour éviter les flèche de scroll dans IE */
+    overflow: auto;
+    /* pour rendre l'area flexible à la taille de la page */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 10px;
+}
+
+/* permet de masquer le curseur de chargement au lancement */
+#spinner {
+    display: none;
+}
+
+/* permet de mettre en forme le file picker */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+/* permet de mettre en forme le file picker */
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red;
+    cursor: inherit;
+    display: block;
+}
+
+/* permet de mettre en forme le file picker */
+input[readonly]  {
+    background-color: white !important;
+    cursor: text !important;
+}
+
+/* permet de mettre en forme le file picker */
+#btnImport, #formDonnSa {
+    margin-right: 20% !important;
+}
+
+/* permet de mettre en forme les boutons de gestion des logs */
+#btnGrpLog {
+    margin-right: 20% !important;
+}
+
+/* permet de mettre en forme le bouton de saisi du code json */
+#mdpSupprJson, #mdpSupprLstMail{
+    width: 80% !important;
+}
+
+#btnTelechargementJson, #btnTelechargementLstMail{
+    width: 15% !important;
+    margin-right: 5px;
+}
+
+#formImportJson, #formImportLstMail{
+    width: 65% !important;
+}
+
+/* permet de mettre en forme les boutons de gestion du json */
+#btnGrpJson, #btnGrpMail {
+    /*margin-right: 20% !important;*/
+    width: 80% !important;
+    margin-top: 20px !important;
+}
+
+#dropdown{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}

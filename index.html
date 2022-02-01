@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>IAG - données lait</title>
+        <script language="javascript1.5" type="text/javascript" src="js/ctrl.js"></script>
+        <script language="javascript1.5" type="text/javascript" src="js/wrk.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--  Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <!-- Alimentation des deux dropdown (n° de fédération et date d'import) au chargement de la page -->
+    <body onload="ctrl.alimenterLstDonneesSante();">
+
+        <h1>Bienvenue sur la page de gestion du projet Relait</h1><br>
+
+        <!-- Le type d'encodage des données, enctype, doit être spécifié ainsi puisque un file picker est présent -->
+        <form enctype="multipart/form-data" method="post" action="http://10.16.15.0/relait/php/main.php" id="formImport">
+            <!-- La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php -->
+            <input type="hidden" name="type" value="IMPORT_MANUEL"/>
+            <!-- Le name de cet élément détermine le nom dans le tableau $_FILES -->
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-info btn-file">
+                        Parcourir&hellip; <input type="file" name="fichierAImp" value="fichierAImp" id="fichierAImp" single/>
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly>
+                <!-- L'appel de la méthode dans ctrl.js se fait ainsi... -->
+                <input type="button" id="btnImport" class="btn btn-info" type="submit" value="Importer"
+                       onclick="ctrl.importManuel()"/>
+            </div>
+        </form>
+
+        <!-- Curseur tournant pour le statut de chargement -->
+        <div id="spinner" class="spinner-border text-primary"></div>
+
+        <!-- Paragraphe servant de zone de retour aux messages envoyés par la partie serveur -->
+        <br>
+        <p id="infoLog">&nbsp;</p>
+        <br>
+
+        <!-- Formulaires pour les appels d'affichage des logs -->
+        <form enctype="application/x-www-form-urlencoded" method="post" action="" id="formLogErr">
+            <!-- La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php -->
+            <input type="hidden" name="type" value="CONSULT_LOG_ERR"/>
+        </form>
+        <form enctype="application/x-www-form-urlencoded" method="post" action="" id="formLogHist">
+            <!-- La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php -->
+            <input type="hidden" name="type" value="CONSULT_LOG_HIST"/>
+        </form>
+        <form enctype="application/x-www-form-urlencoded" method="post" action="" id="formTelechargerLogErr">
+            <!-- La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php -->
+            <input type="hidden" name="type" value="TELECHARGER_LOG_ERR"/>
+        </form>
+        <form enctype="application/x-www-form-urlencoded" method="post" action="" id="formSupprimerLogErr">
+            <!-- La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php -->
+            <input type="hidden" name="type" value="SUPPRIMER_LOG_ERR"/>
+        </form>
+
+        <!-- Le container des différents boutons en rapport aux logs. Leurs formulaires respectifs se trouvent au-dessus -->
+        <div id="btnGrpLog" class="btn-group flex-wrap" data-toggle="buttons">
+            <input type="button" class="btn btn-info" type="submit" value="Consulter le log d'historique"
+                   onclick="ctrl.consulterLogHist()"/>
+            <input type="button" class="btn btn-info" type="submit" value="Consulter le log d'erreurs"
+                   onclick="ctrl.consulterLogErr()"/>
+            <input type="button" class="btn btn-info" type="submit" id="btnTelechargement" value="Télécharger le log d'erreur"
+                   onclick="ctrl.telechargerLog()"/>
+            <input type="button" class="btn btn-info" type="submit" id="btnSuppression" value="Supprimer le log d'erreur"
+                   onclick="ctrl.supprimerLog()"/>
+        </div>
+
+        <!-- Formulaire pour la suppression des données santé -->
+        <form enctype="application/x-www-form-urlencoded" method="post" action="" id="formDonnSa">
+            <!-- La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php -->
+            <input type="hidden" name="type" value="SUPPRESSION_DONNEES_SANTE"/>
+
+            <!--  Balise dans laquelle viennent se mettre les informations quand aux données santé (fédérations et date d'importation) -->
+            <p name="lstDonnSan" id="lstDonnSan">&nbsp;</p>
+        </form>
+        <input type="button" class="btn btn-info" type="submit" id="btnSuppDonneesSante" value="Supprimer des données santé"
+               onclick="ctrl.supprimerDonneesSante()"/>
+
+        <input type="button" id="btnImportAuto" class="btn btn-info" value="Démarrer l'importation automatique" onclick="ctrl.importAuto()"/>
+
+        <br><br>
+        <!-- La zone de texte est créée avec ces propriétés -->
+        <textarea readonly rows="15" cols="122" id="txtLog">
+        </textarea>
+
+        <br><br>
+        <a href="url" id="labelJson" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapse">Afficher les paramètres avancés</a>
+        <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapse">
+                <!-- Le container des différents boutons en rapport au json. Leurs formulaires respectifs se trouvent au-dessus -->
+                <div id="btnGrpJson" class="btn-group flex-wrap" data-toggle="buttons">
+                    <form enctype="application/x-www-form-urlencoded" method="post" action="" id="formTelechargerJson">
+                        <!--La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php--> 
+                        <input type="hidden" name="type" value="TELECHARGER_JSON"/>
+                    </form>
+                    <input type="button" class="btn btn-info" type="submit" id="btnTelechargementJson" value="Télécharger le fichier de paramètres (JSON)"
+                           onclick="ctrl.telechargerJson()"/>  
+                    <!-- Le type d'encodage des données, enctype, doit être spécifié ainsi puisque un file picker est présent -->
+                    <form enctype="multipart/form-data" method="post" action="http://10.16.15.0/relait/php/main.php" id="formImportJson">
+                        <!-- La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php -->
+                        <input type="hidden" name="type" value="IMPORTER_JSON"/>
+                        <!-- Le name de cet élément détermine le nom dans le tableau $_FILES -->
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-info btn-file">
+                                    Parcourir&hellip; <input type="file" name="fichierJson" value="fichierJson" id="fichierJson" single/>
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
+                            <!-- L'appel de la méthode dans ctrl.js se fait ainsi... -->
+                            <input type="button" id="btnImportationJson" class="btn btn-info" type="submit" value="Importer le nouveau fichier de paramètres (JSON)"
+                                   onclick="ctrl.importerJson()"/>
+                        </div>
+                    </form>
+                </div>
+                <input class="form-control" type="text" id="mdpSupprJson" placeholder="Code d'identification du fichier de paramètres (JSON)" />
+
+                <!--Le container des différents boutons en rapport à la liste des mails. Leurs formulaires respectifs se trouvent au-dessus--> 
+                <div id="btnGrpMail" class="btn-group flex-wrap" data-toggle="buttons">
+                    <form enctype="application/x-www-form-urlencoded" method="post" action="" id="formTelechargerLstMail">
+                        <!--La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php--> 
+                        <input type="hidden" name="type" value="TELECHARGER_LST_MAIL"/>
+                    </form>                    
+                    <input type="button" class="btn btn-info" type="submit" id="btnTelechargementLstMail" value="Télécharger la liste d'adresses"
+                           onclick="ctrl.telechargerLstMail()"/>  
+                    <!--Le type d'encodage des données, enctype, doit être spécifié ainsi puisque un file picker est présent--> 
+                    <form enctype="multipart/form-data" method="post" action="http://10.16.15.0/relait/php/main.php" id="formImportLstMail">
+                        <!--La value de cet élément est récupérée, via la transmission du formulaire en POST, dans le switch de main.php--> 
+                        <input type="hidden" name="type" value="IMPORTER_LST_MAIL"/>
+                        <!--Le name de cet élément détermine le nom dans le tableau $_FILES--> 
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-info btn-file">
+                                    Parcourir&hellip; <input type="file" name="fichierLstMail" value="fichierLstMail" id="fichierLstMail" single/>
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
+                            <!--L'appel de la méthode dans ctrl.js se fait ainsi...--> 
+                            <input type="button" id="btnImportationLstMail" class="btn btn-info" type="submit" value="Importer la liste d'adresses"
+                                   onclick="ctrl.importerLstMail()"/>
+                        </div>
+                    </form>
+                </div>
+                <input class="form-control" type="text" id="mdpSupprLstMail" placeholder="Code d'identification mails" />
+            </div>
+        </div>
+
+        <!-- code permettant de placer le nom du fichier sélectionné dans la zone adjacente au file picker -->
+        <script>
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                        numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                        label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [numFiles, label]);
+            });
+
+            $(document).ready(function () {
+                $('.btn-file :file').on('fileselect', function (event, numFiles, label) {
+                    var input = $(this).parents('.input-group').find(':text'),
+                            log = numFiles > 1 ? numFiles + ' files selected' : label;
+                    if (input.length) {
+                        input.val(log);
+                    } else {
+                        if (log)
+                            alert(log);
+                    }
+                });
+            });
+        </script>
+
+    </body>
+
+</html>
