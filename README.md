@@ -10,3 +10,6 @@
 | importSpec.json | paramètre d’importation |
 | wrk.js | url pour la requête |
 | index.html | url pour la requête |
+
+## Base de donnée
+⚡Le script pour créer les tables de la base de donnée se trouve dans le dossier /SQL
